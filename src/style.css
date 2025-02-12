@@ -1,0 +1,44 @@
+html,
+body {
+  background-color: #f3f3f3;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+h1 {
+  width: 100%;
+  flex-shrink: 0;
+  font: bold 24px/2 "Segoe UI";
+}
+
+.grid-painter {
+  border: solid 1px black;
+  margin-right: 20px;
+}
+
+.cell {
+  min-width: 15px;
+  min-height: 15px;
+  border: solid 1px black;
+  background: linear-gradient(
+    340deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.07),
+    rgba(0, 0, 0, 0),
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.1)
+  );
+}
+
+.score-display,
+#next-caption {
+  font: normal 18px/1.5 "Segoe UI";
+  margin: 0;
+  padding: 0;
+}
