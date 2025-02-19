@@ -386,18 +386,18 @@ export class GameLogic {
 
     // The rotation point is at matrix[1][2]
     // We need to rotate around this point
-    const centerX = 2;  // rotation point x
-    const centerY = 1;  // rotation point y
+    const pivotX = 2;  // rotation point x
+    const pivotY = 1;  // rotation point y
 
     for (let y = 0; y < N; y++) {
       for (let x = 0; x < N; x++) {
         // Translate to origin, rotate, then translate back
-        const relativeX = x - centerX;
-        const relativeY = y - centerY;
+        const relativeX = x - pivotX;
+        const relativeY = y - pivotY;
 
         // Rotate counterclockwise around origin
-        const newX = centerX - relativeY;
-        const newY = centerY + relativeX;
+        const newX = pivotX - relativeY;
+        const newY = pivotY + relativeX;
 
         // Copy the value if the new position is within bounds
         if (newX >= 0 && newX < N && newY >= 0 && newY < N) {
@@ -460,7 +460,7 @@ export class GameLogic {
     this.currentFallingPiece.rotation = (this.currentFallingPiece.rotation + 1) % PIECES[this.currentFallingPiece.type].orientations;
 
     if (this.checkCollision()) {
-      // Try wall kicks
+      // // Try wall kicks
       this.currentFallingPiece.x++; // Try right
       if (this.checkCollision()) {
         this.currentFallingPiece.x -= 2; // Try left
