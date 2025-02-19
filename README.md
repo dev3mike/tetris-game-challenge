@@ -1,28 +1,71 @@
-# Combination Technical Test
+# Tetris Implementation
 
-Welcome to Combination's technical test. **Please read this whole document carefully before beginning**.
+This project is a technical challenge originally created for a Swedish technology company.
 
-In this test, you are provided with the following:
+A modern implementation of the classic Tetris game following standard game rules and mechanics.
 
-- A specification document (Specification.pdf) detailing the expected behavior of a simple game. The game follows the traditional rules of Tetris most people are familiar with, but we've included a specification of the whole game as a reference.
-- A TypeScript project containing a starting point for the implementation of the game.
+## Game Overview
 
-Your task is to implement the game according the the specification document.
+The game is played on a 10x20 grid board (10 columns, 20 rows) where pieces fall from the top. Each cell can be either empty or filled.
 
-## External tools
+### Game Features
 
-You are free to access any web resources but expected to be able to explain and reason about your choices and solutions.
+- 7 classic Tetris pieces (O, I, S, Z, L, J, T)
+- 10 difficulty levels
+- Score system based on actions and level
+- Color-coded pieces
+- Standard Tetris controls
 
-## Evaluation
+### Game Mechanics
 
-The test is meant to evaluate your programming and problem-solving skills. Runnable (and bug-free) code is always preferred over good reasoning where applicable.
+#### Pieces
+- Each piece has a unique shape and color
+- Pieces spawn at the top center of the board
+- Pieces can rotate counterclockwise
+- Different pieces have different numbers of rotation states:
+  - O piece: 1 orientation
+  - I, S, Z pieces: 2 orientations
+  - L, J, T pieces: 4 orientations
 
-## Running the application
+#### Controls
+- Left/Right: Move piece horizontally
+- Rotate: Turn piece counterclockwise
+- Drop: Instantly drop piece to bottom
 
-Make sure node 16 or higher is installed, run `npm install` to install all the packages.
-In order to run the application in dev mode, run `npm run dev`.
+#### Gameplay
+- Pieces fall automatically based on current level
+- Completing rows removes them and awards points
+- Up to 4 rows can be completed simultaneously
+- Game speed increases with level
 
-## Development container
+#### Levels and Speed
+- 10 difficulty levels (1-10)
+- Fall speed increases with each level
+- Level 1: 0.50 seconds per step
+- Level 10: 0.05 seconds per step
 
-For convenience, and in order to avoid potential problems with mismatching versions on NodeJS, npm or other tooling, a `devcontainer.json` is included. This allows running and developing the application inside a docker container with the VS Code [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) feature.
-# tetris-game-challenge
+#### Scoring System
+Points are awarded for:
+- Landing pieces
+- Quick drops
+- Completing lines
+- Multiple line completions give bonus points
+- Higher levels award more points
+
+## Technical Requirements
+
+Please check package.json for dependencies and setup instructions.
+
+## Getting Started
+
+1. Install dependencies
+2. Run the game
+3. Use arrow keys or defined controls to play
+
+## Game Rules
+
+1. Pieces fall from the top of the board
+2. Player can move and rotate pieces as they fall
+3. Completing a row removes it and awards points
+4. Game ends if pieces stack to the top
+5. Higher levels mean faster falling pieces
