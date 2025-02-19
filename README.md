@@ -5,6 +5,7 @@ This project is a technical challenge originally created for a Swedish technolog
 A modern implementation of the classic Tetris game following standard game rules and mechanics.
 
 ## Game Overview
+![demo](demo.gif)
 
 The game is played on a 10x20 grid board (10 columns, 20 rows) where pieces fall from the top. Each cell can be either empty or filled.
 
